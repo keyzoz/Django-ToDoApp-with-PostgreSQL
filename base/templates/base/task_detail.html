@@ -1,0 +1,21 @@
+{% extends 'base/main.html' %}
+{% block content %}
+
+<div class="header-bar">
+    <a href="{% url 'task:tasks' %}">&#8592; Back</a>
+</div>
+
+
+<div class="card-body">
+    <form method="POST" action="">
+        {% csrf_token %}
+        <h1>
+            <span class="gradient-text">{{detail_task}}</span>
+        </h1>
+        <h3>Description</h3>
+        {{detail_task.description}}
+    </form>
+</div>
+
+
+{% endblock content %}
